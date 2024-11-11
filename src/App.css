@@ -1,6 +1,20 @@
+/* src/App.css */
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 .App {
   text-align: center;
+  display: flex; /* Use Flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+  min-height: 100vh; /* Full height for the app */
+  justify-content: space-between; 
 }
+
+.App-body {
+  flex: 1; /* Allow main content to grow and push footer down */
+}
+
 
 .App-logo {
   height: 40vmin;

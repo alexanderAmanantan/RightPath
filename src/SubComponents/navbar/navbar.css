@@ -1,0 +1,226 @@
+/* navbar */
+.navbar {
+    background-color: white;
+    height: 80px;
+    margin: 20px;
+    border-radius: 16px;
+    padding: 0.5rem;
+    position: relative; /* Ensure this is positioned correctly to contain absolutely positioned elements */
+    z-index: 100;
+  }
+  
+  .navbar-brand {
+    transition: transform 0.3s ease;
+    margin-left: 1%;
+  }
+  
+  .navbar-brand:hover {
+    transform: scale(1.1); /* Zoom in */
+  }
+  
+  .navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+  }
+  
+  .navbar-toggler:focus, .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+  }
+  
+  .nav-link{
+    color: #36454F;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  .nav-link:hover, .nav-link:active {
+    color: black;
+  }
+  
+  .nav-link.active::before {
+    width: 100%;
+    visibility: visible;
+  }
+  
+  /* Specific styles for the loginsignup button container */
+  .loginsignup-button-container {
+    position: absolute;
+    right: 20px;  /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10; /* Make sure it sits on top of other navbar elements */
+  }
+  
+      /* styles for the login button container */
+      .logo-button-container {
+        position: absolute;
+        left: 30px;  /* Adjust as needed */
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10; /* Make sure it sits on top of other navbar elements */
+      }
+  
+  /* hamburger menu ///////////////////////////////////////////////////////////////////////////////// */
+    /* hamburger icon re-location */
+    @media (max-width: 384px) {
+    /* Position the navbar elements correctly */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; /* Center items vertically in the navbar */
+      padding-right: 10px;
+      position: relative;
+    }
+  
+    /* Position the hamburger icon to the right */
+    .navbar-toggler {
+      position: absolute;
+      right: 10px;  /* Adjust the right distance from the navbar */
+      top: 50%;  /* Center it vertically */
+      transform: translateY(-50%);  /* Ensure it is centered vertically */
+      background: transparent;
+      border: none;
+      padding: 0;
+    }
+  
+    .navbar-toggler-icon {
+      display: inline-block;
+      width: 24px; /* Adjust width */
+      height: 24px; /* Adjust height */
+      background-image: none; /* Remove default Bootstrap icon */
+      background-color: transparent;  /* You can adjust the color of the hamburger icon */
+    }
+  
+    .navbar-nav {
+      position: absolute;
+      top: 35%;
+      transform: translateY(-50%);
+      z-index: 10; /* Make sure it sits on top of other navbar elements */
+    }
+  
+    .loginsignup-button-container {
+      position: absolute;
+      right: 20px;  /* Adjust as needed */
+      top: 95%;
+      transform: translateY(-50%);
+      z-index: 10; /* Make sure it sits on top of other navbar elements */
+    }
+  
+      /* styles for the login button container */
+      .logo-button-container {
+        position: absolute;
+        left: 20px;  /* Adjust as needed */
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10; /* Make sure it sits on top of other navbar elements */
+      }
+  
+    }  
+    
+    @media (min-width: 991px){
+      .nav-link::before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #007FFF;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+      }
+      .nav-link:hover::before, .nav-link:active::before{
+        width: 100%;
+        visibility: visible;
+      }
+    }
+  
+    /* media resizing */
+    /* toggle menu re-sizing for mobile */
+    @media (min-width: 320px) and (max-width: 500px) {
+      #offcanvasNavbar {
+        width: 160px; /* Set desired width */
+      }
+    }
+    
+    /* toggle menu re-sizing for tablets */
+    @media (min-width: 501px) and (max-width: 768px) {
+      #offcanvasNavbar {
+        width: 220px; /* Set desired width */
+      }
+    
+      .navbar {
+        width: 84%;
+        margin-left: 8%;
+        margin-right: 8%;
+      }
+    }
+    
+    /* navbar re-sizing for laptops */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .nav-link {
+        font-weight: 400; /* Adjust font weight here */
+      }
+    
+      .login-button {
+        margin-right: 1%;
+      }
+    }
+    
+    /* navbar re-sizing for regular resolution */
+    @media (min-width: 1280px) and (max-width: 1440px) {
+      .navbar {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+      }
+    
+      .login-button {
+        margin-right: 1%;
+      }
+    }
+    
+    /* navbar re-sizing for higher resolution */
+    @media (min-width: 1600px) and (max-width: 1920px) {
+      .navbar {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+    
+      .login-button {
+        margin-right: 1%;
+      }
+    }
+    
+    /* navbar re-sizing for 2k resolution */
+    @media (min-width: 2048px) and (max-width: 2560px) {
+      .navbar {
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+        height: 120px;
+    
+        border-radius: 16px;
+        padding: 0.5rem;
+      }
+    
+      .nav-link {
+        font-size: x-large;
+      }
+    
+      .navbar-brand img {
+        height: 65px; /* Adjust logo height */
+        width: auto;  /* Maintain aspect ratio */
+      }
+    
+      .login-button {
+        font-size: x-large;
+        margin-right: 1%;
+      }
+    }
+    
+    /* end media resizing */
+  

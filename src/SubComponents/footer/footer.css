@@ -1,0 +1,45 @@
+/* src/SubComponents/footer/footer.css */
+.footer-container {
+  max-height: 100px;
+}
+
+.pagefooter {
+    background-color: #333;
+    padding: 5px;
+    color: white;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .left-footer-container,
+  .mid-footer-container,
+  .right-footer-container {
+    padding: 3px;
+  }
+  
+  .left-footer-container p,
+  .right-footer-container p {
+    margin: 3px 0;
+  }
+  
+  .mid-footer-container p {
+    margin: 3px 0;
+    text-align: center;
+  }
+  
+  @media (max-width: 767px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+    .left-footer-container,
+    .mid-footer-container,
+    .right-footer-container {
+      margin-bottom: 3px;
+    }
+  }
+  
