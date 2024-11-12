@@ -1,0 +1,13 @@
+/* modal.css */
+.modal-90w {
+    width: 90% !important; /* Controls the width of the modal */
+  }
+  
+  .modal-smaller {
+    max-width: 600px; /* Set a max width */
+  }
+  
+  .modal-larger {
+    max-width: 1200px; /* Set a larger max width */
+  }
+  

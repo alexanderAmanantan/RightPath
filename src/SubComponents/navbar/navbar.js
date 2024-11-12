@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+// src/SubComponents/navbar/navbar.js
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Offcanvas } from 'react-bootstrap';
 import './navbar.css';
-//import LoginSignupShowButton from './LoginSignupShowButton';
-//import Logo from './Logo';
 
-function NavbarComponent() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activePage, setActivePage] = useState('/');
+function NavbarComponent({ activePage, setActivePage }) {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const handleToggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -24,7 +22,7 @@ function NavbarComponent() {
     <Navbar bg="light" expand="lg" fixed="top">
       <Container fluid>
         <Navbar.Brand className="d-flex align-items-center logo-button-container" onClick={() => handleNavLinkClick('/')}>
-          {/*<Logo />*/}
+          {/* Logo */}
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={handleToggleMenu} />
@@ -48,7 +46,6 @@ function NavbarComponent() {
               >
                 Travel Packages
               </Nav.Link>
-
               <Nav.Link
                 as={Link}
                 to="/transportation"
@@ -81,20 +78,15 @@ function NavbarComponent() {
               >
                 About Us
               </Nav.Link>
-
               <Nav.Link
                 as={Link}
                 to="/access"
                 onClick={() => handleNavLinkClick('/access')}
                 className={activePage === '/access' ? 'active' : ''}
               >
-                Access
+                Login/Signup
               </Nav.Link>
             </Nav>
-
-           {/*<div className="d-flex mx-lg-2 align-items-center loginsignup-button-container">
-              <LoginSignupShowButton onClick={() => handleNavLinkClick('/loginsignup')} />
-            </div>*/}
           </Offcanvas.Body>
         </Navbar.Offcanvas>
       </Container>

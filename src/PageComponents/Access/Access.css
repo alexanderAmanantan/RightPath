@@ -1,0 +1,11 @@
+.access-feedback {
+    font-size: 10px ; /* Adjust this to your desired font size */
+    color: #ff0000;  /* Example color, change as needed */
+    margin-top: 5px; /* Optional spacing */
+  }
+
+  .password-feedback {
+    font-size: 10px; /* Adjust as needed */
+  }
+  
+  

@@ -1,11 +1,10 @@
 // src/App.js
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-//import Footer from './SubComponents/footer/footer';
-//import NavbarComponent from './SubComponents/navbar/navbar.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-//Import Page Components
+// Import Page Components
 import HomePage from './PageComponents/Home/Home';
 import TravelPackagesPage from './PageComponents/TravelPackages/TravelPackages';
 import TransportationPage from './PageComponents/Transportation/Transportation';
@@ -14,18 +13,22 @@ import TestimonialsPage from './PageComponents/Testimonials/Testimonials';
 import AboutUsPage from './PageComponents/AboutUs/AboutUs';
 import AccessPage from './PageComponents/Access/Access';
 
-//Import Sub Components
+// Import Sub Components
 import NavbarComponent from './SubComponents/navbar/navbar';
 import Footer from './SubComponents/footer/footer';
 
-
-
 function App() {
+  // Lift the state up to App.js
+  const [activePage, setActivePage] = useState('/');
+
+  const resetActivePage = () => {
+    setActivePage('/'); // Reset to the homepage or whichever page you choose
+  };
+
   return (
     <div className="App">
       <Router>
-        <NavbarComponent sticky="top" />
-        {/*<CarouselComponent /> */}
+        <NavbarComponent activePage={activePage} setActivePage={setActivePage} />
         <div className="App-body">
           <Routes>
             <Route path="/" element={<HomePage />} /> {/* Home route */}
@@ -34,17 +37,12 @@ function App() {
             <Route path="/trip-planner" element={<TripPlannerPage />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />
             <Route path="/about-us" element={<AboutUsPage />} />
-            <Route path="/access" element={<AccessPage />} />
-            {/* <Route path="/package-details/:id" element={<PackageDetails />} /> */}
-            {/* <Route path="/loginsignup" element={<LoginSignUpForms />} /> */}
+            {/* Pass resetActivePage to AccessPage */}
+            <Route path="/access" element={<AccessPage resetActivePage={resetActivePage} />} />
           </Routes>
         </div>
         <Footer sticky="bottom" />
       </Router>
-      {/* Your other content */}
-      {/*<NavbarComponent /> */}
-      {/* Render the Footer component */}
-      {/*<Footer /> */}
     </div>
   );
 }
