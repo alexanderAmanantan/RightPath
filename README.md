@@ -68,3 +68,26 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+for routing:
+npm install react-router-dom
+
+for data fetching, caching and synchronization:
+npm install react-query
+
+
+development tools:
+npm install prop-types
+npm install prettier --save-dev
+npm install eslint --save-dev
+
+api request/http client:
+npm install axios
+
+form handling:
+npm install formik
+npm install react-hook-form
+
+css styling:
+npm install bootstrap
